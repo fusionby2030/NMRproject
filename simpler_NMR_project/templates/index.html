@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+      My First Dashboard
+    </title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form method="POST">
+        New x value: <input type="float" step=any name="input_x"><br>
+        New y value: <input type="float" step=any name="input_y"><br>
+        <input type="submit" name="submit_button" value = "populate_data">
+        <input type="submit" name="submit_button" value = "reset data">
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart" id="bargraph">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('bargraph',graphs,{});
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
